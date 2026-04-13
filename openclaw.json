@@ -1,0 +1,31 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/path/to/workspace",
+      "sandbox": { "mode": "off" },
+      "model": { "primary": "ollama/qwen2.5:7b-instruct" }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": { "mode": "token", "token": "******" },
+    "port": 18789,
+    "bind": "loopback"
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://host.docker.internal:11434",
+        "api": "ollama",
+        "models": [{ "id": "qwen2.5:7b-instruct" }]
+      }
+    }
+  },
+  "channels": {
+    "qqbot": {
+      "enabled": true,
+      "appId": "******",
+      "clientSecret": "******"
+    }
+  }
+}
